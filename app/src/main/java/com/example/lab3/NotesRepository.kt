@@ -10,7 +10,7 @@ import okhttp3.Request
 import java.io.IOException
 
 class NotesRepository(private val okHttpClient: OkHttpClient) {
-    private val notesUrl = "https://mej1g.wiremockapi.cloud/notes"
+    private val notesUrl = "https://v78qr.wiremockapi.cloud/notes"
 
     suspend fun fetchNotes(): Result<List<Note>> = runCatching {
         withContext(Dispatchers.IO) {

@@ -16,10 +16,12 @@ import org.koin.compose.getKoin
 fun NotesApp() {
     val navController = rememberNavController()
     val notesRepository: NotesRepository = getKoin().get()
+    val prefsHelper: NotesPrefsHelper = getKoin().get()
+
     val viewModel: NotesViewModel = viewModel(
         factory = object : ViewModelProvider.Factory {
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                return NotesViewModel(notesRepository) as T
+                return NotesViewModel(notesRepository, prefsHelper) as T
             }
         }
     )

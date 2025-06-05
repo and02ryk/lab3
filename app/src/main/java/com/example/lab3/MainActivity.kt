@@ -11,6 +11,7 @@ import org.koin.dsl.module
 val appModule = module {
     single { OkHttpClient() }
     single { NotesRepository(get()) }
+    single { NotesPrefsHelper(get()) }
 }
 
 class MainActivity : ComponentActivity() {
